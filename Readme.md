@@ -58,11 +58,11 @@
 
 ##### FSM图
 
-![FSM](C:\Users\fengchuiyusan\Desktop\FSM.jpg)
+![FSM](http://106.15.35.61:81/markdown_pic/mips_multi_cycle_cpu/FSM.png)
 
 ##### 数据通路
 
-![datapath](C:\Users\fengchuiyusan\Desktop\datapath.jpg)
+![datapath](http://106.15.35.61:81/markdown_pic/mips_multi_cycle_cpu/datapath.png)
 
 
 
@@ -92,7 +92,7 @@
 
 于是根据这些指令,扩展FSM图,生成新的FSM图如下:(控制信号的值在此处省略):
 
-![1651460557495644284230480292951](C:\Users\fengchuiyusan\Downloads\1651460557495644284230480292951.jpg)
+![1651460557495644284230480292951](http://106.15.35.61:81/markdown_pic/mips_multi_cycle_cpu/states.png)
 
 对应的**状态转换代码及控制信号**如下:
 
@@ -183,7 +183,7 @@
 
 根据我们刚刚扩展的指令,扩展完各个字段后,得到datapath的结构如下:
 
-![image-20220502110915980](C:\Users\fengchuiyusan\AppData\Roaming\Typora\typora-user-images\image-20220502110915980.png)
+![image-20220502110915980](http://106.15.35.61:81/markdown_pic/mips_multi_cycle_cpu/datapath.png)
 
 (由于lbu和lb指令以及addi等指令,加入了许多扩展模块,如**zeroext8_32,zeroext,signext8_32**等等)
 
@@ -195,7 +195,7 @@
 
 - 在这个基准程序中,我们分别测试了**addi,or,and,beq,slt,sub,sw,lw,j,xori,srlv,bne,lbu,ori**等指令的执行正确性
 - 测试基准程序如下:
-- ![image-20220502111516187](C:\Users\fengchuiyusan\AppData\Roaming\Typora\typora-user-images\image-20220502111516187.png)
+- ![image-20220502111516187](http://106.15.35.61:81/markdown_pic/mips_multi_cycle_cpu/test_code.png)
 
 ---
 
@@ -203,15 +203,11 @@
 
 我们按照设计将各个模块写好并连接后,可以得到如下的程序代码结构:
 
-![image-20220502111821077](C:\Users\fengchuiyusan\AppData\Roaming\Typora\typora-user-images\image-20220502111821077.png)
-
 于是我们对这些代码查看**综合原理图**,如下所示:
 
-![image-20220502111917792](C:\Users\fengchuiyusan\AppData\Roaming\Typora\typora-user-images\image-20220502111917792.png)
+![image-20220502111917792](http://106.15.35.61:81/markdown_pic/mips_multi_cycle_cpu/simulation.png)
 
 **Controller结构图:**
-
-![image-20220502112008088](C:\Users\fengchuiyusan\AppData\Roaming\Typora\typora-user-images\image-20220502112008088.png)
 
 **datapath结构图**
 
@@ -309,7 +305,7 @@ endmodule
 
 最终,我们进行仿真,可以得到如下结果
 
-![image-20220502120547077](C:\Users\fengchuiyusan\AppData\Roaming\Typora\typora-user-images\image-20220502120547077.png)
+![image-20220502120547077](http://106.15.35.61:81/markdown_pic/mips_multi_cycle_cpu/result.png)
 
 ![image-20220502120800386](C:\Users\fengchuiyusan\AppData\Roaming\Typora\typora-user-images\image-20220502120800386.png)
 
